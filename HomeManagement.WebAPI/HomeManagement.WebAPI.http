@@ -1,0 +1,6 @@
+@HomeManagement.WebAPI_HostAddress = http://localhost:5104
+
+GET {{HomeManagement.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

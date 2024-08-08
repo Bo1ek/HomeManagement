@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HomeManagement.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b31e8b6ca0bc96596c2109473a8a4cf86571bdfb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4da821f093573c8ca77ded0a416a9a9cb0fb65a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("HomeManagement.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HomeManagement.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

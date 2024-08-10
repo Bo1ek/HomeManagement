@@ -3,7 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeManagement.WebAPI", "HomeManagement.WebAPI.csproj", "{4D0BECBE-FA16-419B-A527-A500EB23D03C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeManagement.WebAPI", "HomeManagement.WebAPI.csproj", "{4D0BECBE-FA16-419B-A527-A500EB23D03C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ABB8E620-4759-4940-B861-D1D31CB5B5C8} = {ABB8E620-4759-4940-B861-D1D31CB5B5C8}
+		{E177C552-6EC9-447A-AA60-0083D8691406} = {E177C552-6EC9-447A-AA60-0083D8691406}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeManagement.Domain", "..\HomeManagement.Domain\HomeManagement.Domain.csproj", "{75EB0D95-FC79-4F53-87A0-AA180BBC02AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeManagement.Infrastructure", "..\HomeManagement.Infrastructure\HomeManagement.Infrastructure.csproj", "{0AE615BC-6DE1-4EC4-B487-85EECA4671EA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{75EB0D95-FC79-4F53-87A0-AA180BBC02AF} = {75EB0D95-FC79-4F53-87A0-AA180BBC02AF}
+		{E177C552-6EC9-447A-AA60-0083D8691406} = {E177C552-6EC9-447A-AA60-0083D8691406}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeManagement.Application", "..\HomeManagement.Application\HomeManagement.Application.csproj", "{E177C552-6EC9-447A-AA60-0083D8691406}"
+	ProjectSection(ProjectDependencies) = postProject
+		{75EB0D95-FC79-4F53-87A0-AA180BBC02AF} = {75EB0D95-FC79-4F53-87A0-AA180BBC02AF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeManagement.Presentation", "..\HomeManagement.Presentation\HomeManagement.Presentation.csproj", "{ABB8E620-4759-4940-B861-D1D31CB5B5C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +34,22 @@ Global
 		{4D0BECBE-FA16-419B-A527-A500EB23D03C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D0BECBE-FA16-419B-A527-A500EB23D03C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D0BECBE-FA16-419B-A527-A500EB23D03C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75EB0D95-FC79-4F53-87A0-AA180BBC02AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75EB0D95-FC79-4F53-87A0-AA180BBC02AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75EB0D95-FC79-4F53-87A0-AA180BBC02AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75EB0D95-FC79-4F53-87A0-AA180BBC02AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AE615BC-6DE1-4EC4-B487-85EECA4671EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE615BC-6DE1-4EC4-B487-85EECA4671EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE615BC-6DE1-4EC4-B487-85EECA4671EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE615BC-6DE1-4EC4-B487-85EECA4671EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E177C552-6EC9-447A-AA60-0083D8691406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E177C552-6EC9-447A-AA60-0083D8691406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E177C552-6EC9-447A-AA60-0083D8691406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E177C552-6EC9-447A-AA60-0083D8691406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB8E620-4759-4940-B861-D1D31CB5B5C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB8E620-4759-4940-B861-D1D31CB5B5C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB8E620-4759-4940-B861-D1D31CB5B5C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB8E620-4759-4940-B861-D1D31CB5B5C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

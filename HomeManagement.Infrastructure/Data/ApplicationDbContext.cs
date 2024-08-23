@@ -1,11 +1,12 @@
 ﻿using HomeManagement.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace HomeManagement.Infrastructure.Data;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : IdentityDbContext<User>
 {
-    public DbSet<Test> Tests { get; set; }
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
     }
@@ -13,4 +14,5 @@ public class ApplicationDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
     }
+    public DbSet<User> User { get; set; }
 }

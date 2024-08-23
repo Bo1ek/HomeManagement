@@ -1,10 +1,24 @@
+
+using HomeManagement.Domain.Entities;
 using HomeManagement.Infrastructure.Data;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+
+var connectionString = builder.Configuration.GetConnectionString("HomeManagementDatabase") ?? throw new InvalidOperationException("Connection string not found");
+
+builder.Services.AddIdentityCore<User>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddApiEndpoints();
+
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddAuthorization();
+builder.Services.AddIdentityApiEndpoints<User>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -17,16 +31,12 @@ builder.Services.AddCors(options =>
                    .AllowAnyHeader()
                    .AllowAnyMethod()
                    .WithOrigins("http://localhost:3000");
-            Console.WriteLine("CORS policy applied: AllowAnyOrigin, AllowAnyHeader, AllowAnyMethod");
         });
 });
 
 var app = builder.Build();
-Console.WriteLine("Application building...");
-
+app.MapIdentityApi<User>();
 app.UseCors("AllowSpecificOrigin");
-
-Console.WriteLine("CORS middleware applied...");
 
 if (app.Environment.IsDevelopment())
 {
@@ -37,4 +47,3 @@ app.UseAuthorization();
 app.MapControllers();
 app.Run();
 
-Console.WriteLine("Application is running...");

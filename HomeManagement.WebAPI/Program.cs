@@ -14,7 +14,7 @@ builder.Services.AddIdentityCore<User>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddApiEndpoints();
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString, b => b.MigrationsAssembly("HomeManagement.Infrastructure")));
 
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<User>()

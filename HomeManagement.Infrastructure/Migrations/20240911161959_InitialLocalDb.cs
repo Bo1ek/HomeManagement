@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HomeManagement.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class User : Migration
+    public partial class InitialLocalDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

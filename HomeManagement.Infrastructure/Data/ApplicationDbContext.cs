@@ -1,7 +1,6 @@
 ﻿using HomeManagement.Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
 
 namespace HomeManagement.Infrastructure.Data;
 
